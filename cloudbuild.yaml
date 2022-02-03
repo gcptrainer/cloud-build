@@ -16,3 +16,4 @@ images: ['gcr.io/fiery-buttress-339215/cloud-spanner-build']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 
            'gcr.io/fiery-buttress-339215/cloud-spanner-build']
+
