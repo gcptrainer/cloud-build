@@ -10,10 +10,10 @@
   
 steps:
 - name: gcr.io/cloud-builders/docker
-  args: ['build', '-t', 'gcr.io/fiery-buttress-339215/cloud-spanner-build', '--build-arg=JAR_FILE=target/build-artifact', '.']
-images: ['gcr.io/fiery-buttress-339215/cloud-spanner-build']
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/sapient-terrain-334911/cloud-build', '--build-arg=JAR_FILE=target/build-artifact', '.']
+images: ['us-central1-docker.pkg.dev/sapient-terrain-334911/cloud-spanner-build']
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 
-           'gcr.io/fiery-buttress-339215/cloud-spanner-build']
+           'gus-central1-docker.pkg.dev/sapient-terrain-334911/cloud-build']
 
