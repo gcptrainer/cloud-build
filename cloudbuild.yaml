@@ -10,10 +10,16 @@
   
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/sapient-terrain-334911/cloud-build/cloud-build-spanner:$SHORT_SHA', '--build-arg=JAR_FILE=target/build-artifact', '.']
-images: ['us-central1-docker.pkg.dev/sapient-terrain-334911/cloud-build/cloud-build-spanner:$SHORT_SHA']
+  args: 
+  - 'build' 
+  - '-t' 
+  - 'us-central1-docker.pkg.dev/sapient-terrain-334911/cloud-build/cloud-build-spanner:$SHORT_SHA' 
+  - '--build-arg=JAR_FILE=target/build-artifact'
+  - '.'
+#  images: ['us-central1-docker.pkg.dev/sapient-terrain-334911/cloud-build/cloud-build-spanner:$SHORT_SHA']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 
-           'us-central1-docker.pkg.dev/sapient-terrain-334911/cloud-build/cloud-build-spanner:$SHORT_SHA']
+  args: 
+  - 'push', 
+  - 'us-central1-docker.pkg.dev/sapient-terrain-334911/cloud-build/cloud-build-spanner:$SHORT_SHA'
 
